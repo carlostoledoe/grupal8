@@ -1,22 +1,17 @@
 <div id="<%= dom_id news %>">
-  <p>
-    <strong>Encabezado:</strong>
-    <%= news.encabezado %>
-  </p>
-
-  <p>
-    <strong>Cuerpo:</strong>
-    <%= news.cuerpo %>
-  </p>
-
-  <p>
-    <strong>Link:</strong>
-    <%= news.link %>
-  </p>
-
-  <p>
-    <strong>Tipo:</strong>
-    <%= news.tipo %>
-  </p>
-
+  <div class="card" style="width: 13rem;">
+    <%= link_to (image_tag "03nac.jpg", class: "card-img-top"), "#" %>  
+    <div class="card-body">
+      <h5 class="card-title"><%= news.encabezado %></h5>
+      <p class="card-text"><%= news.cuerpo %></p>
+      <p class="card-text"><%= news.tipo %></p>
+      <p class="card-text"> <strong>Link:</strong> <%= news.link %></p>
+      <div class="row justify-content-center boton01">
+        <%= link_to "Ver esta noticia", news, class: "btn btn-primary col-10"  %>
+        <%= @img %>
+      </div>
+    </div>
+  </div>
 </div>
+
+<%# Cómo cabiar el nombre de la foto condicionado al tipo %>

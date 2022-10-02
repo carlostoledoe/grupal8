@@ -3,8 +3,7 @@
 <%= render @news %>
 
 <div>
-  <%= link_to "Edit this news", edit_news_path(@news) %> |
-  <%= link_to "Back to news", news_index_path %>
-
-  <%= button_to "Destroy this news", @news, method: :delete %>
+  <%= link_to "Editar", edit_news_path(@news) %> |
+  <%= link_to "Volver al inicio", home_index_path %>
+  <%= button_to "Eliminar esta noticia", @news, method: :delete %>
 </div>
