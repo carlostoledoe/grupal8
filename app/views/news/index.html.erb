@@ -3,6 +3,12 @@
 <div  class="container" >
   <h1>Noticias</h1>
 
+
+  <form>
+    <input name="categoria" <%= @news %> >
+    <button type=”submit”>Buscar</button>
+  </form>
+
   <div id="news">
     <div class="row">
       <% @news.each do |news| %>

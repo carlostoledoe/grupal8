@@ -3,7 +3,12 @@ class NewsController < ApplicationController
 
   # GET /news or /news.json
   def index
-    @news = News.all
+    @q = params[:aaa]
+    if @q
+      @news = News.where(:tipo => @q)
+      else
+      @news= News.all
+    end
   end
 
   # GET /news/1 or /news/1.json

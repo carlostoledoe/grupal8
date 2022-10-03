@@ -1,17 +1,36 @@
+
+
 <div id="<%= dom_id news %>">
-  <div class="card" style="width: 13rem;">
-    <%= link_to (image_tag "03nac.jpg", class: "card-img-top"), "#" %>  
-    <div class="card-body">
-      <h5 class="card-title"><%= news.encabezado %></h5>
-      <p class="card-text"><%= news.cuerpo %></p>
-      <p class="card-text"><%= news.tipo %></p>
-      <p class="card-text"> <strong>Link:</strong> <%= news.link %></p>
-      <div class="row justify-content-center boton01">
-        <%= link_to "Ver esta noticia", news, class: "btn btn-primary col-10"  %>
-        <%= @img %>
+
+  <% @aa = news.tipo %>
+
+  <% case @aa %>
+    <% when @aa = 1%>
+      <% @img = "01dep.jpg" %>
+    <% when @aa = 2%>
+      <% @img = "02far.jpg" %>
+    <% when @aa = 3%>
+      <% @img = "03nac.jpg" %>
+    <% when @aa = 4%>
+      <% @img = "04int.jpg" %>
+    <% when @aa = 5%>
+      <% @img = "05pol.jpg" %>   
+  <% end %>
+
+
+  <div class="row">
+    <div class="card" style="width: 15rem;">
+      <%= link_to (image_tag @img, class: "card-img-top"), "#" %>  
+      <div class="card-body">
+        <h5 class="card-title"><%= news.encabezado %></h5>
+        <p class="card-text"><%= news.cuerpo %></p>
+        <p class="card-text"><%= news.tipo %></p>
+        <p class="card-text"> <strong>Link:</strong> <%= news.link %></p>
+        <div class="row justify-content-center boton01">
+          <%= link_to "Ver esta noticia", news, class: "btn btn-primary col-10"  %>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<%# Cómo cabiar el nombre de la foto condicionado al tipo %>
