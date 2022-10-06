@@ -1,7 +1,20 @@
+<% @dep = "/news?category=1" %>
+<% @far = "/news?category=2" %>
+<% @nac = "/news?category=3" %>
+<% @int = "/news?category=4" %>
+<% @pol = "/news?category=5" %>
+
+<% @dep_img = "01dep.jpg" %>
+<% @far_img = "02far.jpg" %>
+<% @nac_img = "03nac.jpg" %>
+<% @int_img = "04int.jpg" %>
+<% @pol_img = "05pol.jpg" %>
+
+
 <div class="card-group">
   <div class="card">
     <%# <img src="..." class="card-img-top" alt="..."> %>
-    <%= link_to (image_tag "01dep.jpg", class: "card-img-top"), "/news?aaa=1" %> 
+    <%= link_to (image_tag @dep_img, class: "card-img-top"), @dep %> 
     <div class="card-body">
       <h5 class="card-title">Deportes</h5>
       <p class="card-text">Revisa las últimas noticias positivas del deporte en Chile y el mundo.</p>
@@ -9,7 +22,7 @@
     <div class="container">
       <div class="ppp row justify-content-center">
         <div class=".col-8 row justify-content-center">
-          <a href="/news?aaa=1" class="btn btn-primary btn-sm" role="button">Ver deportes</a>
+          <%= link_to "Ver Deportes", @dep, class: "btn btn-primary btn-sm" %>
         </div>
       </div>
     </div>
@@ -17,7 +30,7 @@
 
   <div class="card">
     <%# <img src="..." class="card-img-top" alt="..."> %>
-    <%= link_to (image_tag "02far.jpg", class: "card-img-top"), "/news?aaa=2" %> 
+    <%= link_to (image_tag @far_img, class: "card-img-top"), @far %> 
     <div class="card-body">
       <h5 class="card-title">Farándula</h5>
       <p class="card-text">Entérate de las copuchas de la farándula nacional e internacional.</p>
@@ -25,7 +38,7 @@
         <div class="container">
       <div class="ppp row justify-content-center">
         <div class=".col-8 row justify-content-center">
-          <a href="/news?aaa=2" class="btn btn-primary btn-sm" role="button">Ver farándula</a>
+          <%= link_to "Ver farándula", @far, class: "btn btn-primary btn-sm" %>
         </div>
       </div>
     </div>
@@ -33,7 +46,7 @@
 
   <div class="card">
     <%# <img src="..." class="card-img-top" alt="..."> %>
-    <%= link_to (image_tag "03nac.jpg", class: "card-img-top"), "/news?aaa=3" %> 
+    <%= link_to (image_tag @nac_img, class: "card-img-top"), @nac %> 
     <div class="card-body">
       <h5 class="card-title">Nacional</h5>
       <p class="card-text">Revisa las noticias felices del ámnito nacional</p>
@@ -41,7 +54,7 @@
         <div class="container">
       <div class="ppp row justify-content-center">
         <div class=".col-8 row justify-content-center">
-          <a href="/news?aaa=3" class="btn btn-primary btn-sm" role="button">Ver Nacional</a>
+        <%= link_to "Ver Nacional", @nac, class: "btn btn-primary btn-sm" %>
         </div>
       </div>
     </div>
@@ -49,7 +62,7 @@
 
   <div class="card">
     <%# <img src="..." class="card-img-top" alt="..."> %>
-    <%= link_to (image_tag "04int.jpg", class: "card-img-top"), "/news?aaa=4" %>
+    <%= link_to (image_tag @int_img, class: "card-img-top"), @int %>
     <div class="card-body">
       <h5 class="card-title">Internacional</h5>
       <p class="card-text">Mantenten al día con las noticias positivas de mundo</p>
@@ -57,7 +70,7 @@
         <div class="container">
       <div class="ppp row justify-content-center">
         <div class=".col-8 row justify-content-center">
-          <a href="/news?aaa=4" class="btn btn-primary btn-sm" role="button">Ver Internacional</a>
+          <%= link_to "Ver Internacional", @int, class: "btn btn-primary btn-sm" %>
         </div>
       </div>
     </div>
@@ -65,7 +78,7 @@
 
   <div class="card">
     <%# <img src="..." class="card-img-top" alt="..."> %>
-    <%= link_to (image_tag "05pol.jpg", class: "card-img-top"), "/news?aaa=5" %>
+    <%= link_to (image_tag @pol_img, class: "card-img-top"), @pol %>
     <div class="card-body">
       <h5 class="card-title">Política</h5>
       <p class="card-text">Revisa las noticias positivas de la politica nacional</p>
@@ -73,7 +86,7 @@
       <div class="container">
       <div class="ppp row justify-content-center">
         <div class=".col-8 row justify-content-center">
-          <a href="/news?aaa=5" class="btn btn-primary btn-sm" role="button">Ver Política</a>
+          <%= link_to "Ver Política", @pol, class: "btn btn-primary btn-sm" %>
         </div>
       </div>
     </div>

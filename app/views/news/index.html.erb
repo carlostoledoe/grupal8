@@ -3,11 +3,17 @@
 <div  class="container" >
   <h1>Noticias</h1>
 
+<div class="container">
+  <div class="row justify-content-center">
+    <%= form_with url: news_index_path, class: "col-6", method: :get do |f| %>
+    <%= f.label :search, "Buscar Noticia: " %>
+    <%= f.text_field :search %>
+    <%= f.submit "Buscar" %>
+    <% end %>
+  </div>
+</div>
 
-  <form>
-    <input name="categoria" <%= @news %> >
-    <button type=”submit”>Buscar</button>
-  </form>
+<br>
 
   <div id="news">
     <div class="row">
@@ -25,6 +31,6 @@
   </div>
 
     <div class="row justify-content-center boton01">
-      <%= link_to "Volver a inicio", home_index_path, class: "btn btn-info col-3" %>
+      <%= link_to "Volver a inicio", homes_path, class: "btn btn-info col-3" %>
   </div>
 </div>

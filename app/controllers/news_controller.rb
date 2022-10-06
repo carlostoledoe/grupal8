@@ -3,11 +3,11 @@ class NewsController < ApplicationController
 
   # GET /news or /news.json
   def index
-    @q = params[:aaa]
-    if @q
-      @news = News.where(:tipo => @q)
-      else
-      @news= News.all
+    @tip = params[:category] 
+    if @tip
+      @news = News.where(:tipo => @tip) #para buscar por tipo
+    else
+      @news = News.buscar(params[:search]) #para buscar por nombre
     end
   end
 
@@ -68,8 +68,4 @@ class NewsController < ApplicationController
       @news = News.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
-    def news_params
-      params.require(:news).permit(:encabezado, :cuerpo, :link, :tipo)
-    end
 end
