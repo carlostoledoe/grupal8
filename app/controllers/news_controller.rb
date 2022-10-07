@@ -3,11 +3,20 @@ class NewsController < ApplicationController
 
   # GET /news or /news.json
   def index
-    @tip = params[:category] 
-    if @tip
-      @news = News.where(:tipo => @tip) #para buscar por tipo
+    # @tip = params[:category] 
+    # if @tip
+    #   @news = News.where(:tipo => @tip) #para buscar por tipo
+    # else
+    #   @news = News.buscar(params[:search]) #para buscar por nombre
+    # end
+
+    # @news = News.where("tipo = #{params[:category]}") if params[:category].present? # No funciona
+    # @news = News.buscar(params[:search])
+
+    if params[:category].present?
+      @news = News.where("tipo = #{params[:category]}")
     else
-      @news = News.buscar(params[:search]) #para buscar por nombre
+      @news = News.buscar(params[:search])
     end
   end
 
